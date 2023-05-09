@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/styles/header.css' %}">
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'blog/partials/_header.html' %}
+    {% block content %}
+    {% endblock %}
+</body>
+<script>
+    window.addEventListener('load',()=>{
+
+document.addEventListener('scroll', (e) => {
+    const lastKnownScrollPosition = window.scrollY;
+    const headerHeight = header.clientHeight
+
+    if(
+        lastKnownScrollPosition >0
+        && !(header.classList.contains('header--opaque'))
+    ){
+        header.classList.add('header--opaque')
+    }
+    if(
+        lastKnownScrollPosition ==0
+        && (header.classList.contains('header--opaque'))
+    ){
+        header.classList.remove('header--opaque')
+    }
+
+});
+const header_toggle = document.querySelector('.header__toggle-button')
+
+header_toggle.addEventListener('click',()=>{
+    const header = document.querySelector('#header')
+    const header_menu = document.querySelector('.header__menu ')
+    header_menu.classList.toggle('active')
+    header.classList.toggle('active')
+})
+
+document.querySelectorAll('.header__menu > ul > li').forEach((item)=>{
+    const header = document.getElementById('header')
+    mouseHoverItem(item,header)
+})
+
+function mouseHoverItem(item, header){
+
+    const submenu = item.querySelector('ul')
+
+    item.addEventListener('mouseenter',(e)=>{
+        item.classList.add('active')
+    })
+    
+    header.addEventListener('mouseleave',(e)=>{
+        item.classList.remove('active')
+    })
+
+    // if(submenu){
+    //     submenu.addEventListener('mouseover',(e)=>{
+    //         item.classList.add('active')
+    //     })
+    
+    //     submenu.addEventListener('mouseout',(e)=>{
+    //         item.classList.remove('active')
+    //     })
+    // }
+} 
+})
+</script>
+</html>

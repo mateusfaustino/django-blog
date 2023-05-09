@@ -1,14 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>
-        home
-    </h1>
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<h1>
+    home
+</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script>
+    window.addEventListener('load',()=>{
+        
+        document.querySelector("body")
+            .scrollIntoView({
+                behavior: 'smooth'
+            });
+        setTimeout(async() => {
+            if(window.scrollY==0){
+                await document.querySelector("#hello")
+                .scrollIntoView({
+                    behavior: 'smooth'
+                });
+                document.querySelector("#header").classList.add('header--opaque')
+            }
+        }, 10000);
+
+
+    })
+</script>
+{% endblock %}
