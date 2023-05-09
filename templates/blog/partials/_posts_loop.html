@@ -1,0 +1,29 @@
+{% load static %}
+{% for post in posts %}
+    <li>
+        <div id="news-portal-item">
+            <div class="news-portal-item__thumb"
+                style="background-image: url({{post.thumb}})"
+            >
+            </div>
+
+            <div class="news-portal-item__content">
+
+                <div class="news-portal-item__header">
+                    <div class="news-portal-item__title">
+                        {{post.title}}
+                    </div>
+                </div>
+                <div class="news-portal-item__excerpt">
+                    {{post.excerpt}}
+                </div>
+                <div class="news-portal-item__action-area">
+                    <a href="{{post.link}}" class="news-portal-item__action">
+                        Continue lendo...
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </li> 
+{% endfor %}

@@ -1,0 +1,51 @@
+{% load static %}
+<div id="sidebar-sobre" class="sidebar">
+	<div class='sidebar-sobre__header'>
+		<div class='sidebar-sobre__title'>
+			Sobre o autor 
+		</div>
+		<div class='sidebar-sobre__author'>
+			<span>
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.39629 0.276489L6.64612 4.12307H10.6906L7.41855 6.50038L8.66838 10.347L5.39629 7.96965L2.12419 10.347L3.37402 6.50038L0.101927 4.12307H4.14646L5.39629 0.276489Z" fill="#2E3A7B"/>
+				</svg>
+			</span>
+            {{author.name}}
+			<span>
+				<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M5.39629 0.276489L6.64612 4.12307H10.6906L7.41855 6.50038L8.66838 10.347L5.39629 7.96965L2.12419 10.347L3.37402 6.50038L0.101927 4.12307H4.14646L5.39629 0.276489Z" fill="#2E3A7B"/>
+				</svg>
+			</span>
+		</div>
+	</div>
+	<div class='sidebar-sobre__content'>
+		<div class='sidebar-sobre__author-avatar'> 
+			<img src="{{ author.avatar }}"/>
+		</div>
+		<p class='sidebar-sobre__author-description'>
+            {{ author.description }}
+		</p>
+	</div>
+	
+</div>
+<div id="sidebar-sobre" class="sidebar">
+	<div class='sidebar-sobre__header'>
+		<div class='sidebar-sobre__title'>
+			Redes sociais
+		</div>
+		<div class='sidebar-sobre__author'>
+			
+		</div>
+	</div>
+	<div class='social_media__content'>
+
+        {% for sm in social_media %}
+			<a href="{{sm.link}}" target="_blank">
+                {% autoescape off %}
+                    {{sm.icon}}
+                {% endautoescape %}
+			</a>
+        {% endfor %}
+	</div>
+	
+</div>

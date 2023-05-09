@@ -24,6 +24,23 @@
         </div>
     </div>
 </section>
+<section id="hello">
+    <div id="primary_column">
+        <div class="last_posts__header">
+            <h2>
+                Últimos posts
+            </h2>
+        </div>
+        <ul class="news-portal">
+            {% include 'blog/partials/_posts_loop.html' %}
+        </ul>
+    </div>
+    
+    <div id="secondary_column">
+        {% include 'blog/partials/_sidebar.html' %}
+    </div>
+
+</section>
 <style>
     .hero__image{
         background-image: url("{% static '/assets/imagens/blog/hero.jpg' %}");
