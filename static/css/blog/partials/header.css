@@ -196,3 +196,42 @@
         color: #000;
     }
 }
+
+.toggle-button{
+    height: 32px;
+    width: 32px;
+    max-width: 40px;
+    padding: 4px 2px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.header__toggle-button__row{
+    background: rgb(255, 255, 255);
+    height: 4px;
+}
+.active #row01{
+    transform: translateY(13px) rotate(-45deg) scaleY(0.8);
+    transition: all 1s ease 0s;
+}
+.active #row02{
+    transform: scaleX(0);
+    transition: all 0.5s ease 0s;
+}
+.active #row03{
+    transform: translateY(-14px) rotate(45deg) scaleY(0.8);
+    transition: all 1s ease 0s;
+}
+#row01{
+    transform: translateY(0px) rotate(0deg) scaleY(1);
+    transition: all 1s ease 0s;
+}
+#row02{
+    transform: scaleX(1);
+    transition: all 0.5s ease 0s;
+}
+#row03{
+    transform: translateY(0px) rotate(0deg) scaleY(1);
+    transition: all 1s ease 0s;
+}
