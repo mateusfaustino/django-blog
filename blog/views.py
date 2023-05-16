@@ -54,7 +54,7 @@ def home(request):
     #     }
     # ]
 
-    posts = Post.objects.all()
+    posts = Post.objects.order_by("post_date").filter(published=True)
 
     hero_texts = [
         'La Trilha',
