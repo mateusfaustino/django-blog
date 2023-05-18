@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from post.models import Post
 
 def post(request, post_slug):
