@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from blog.models import Post
+
+from post.models import Post
 
 def home(request):
 
@@ -68,4 +69,4 @@ def home(request):
         'social_media': social_media,
         'author': author
     }
-    return render(request,'blog/home.html',context)
+    return render(request,'client/home.html',context)

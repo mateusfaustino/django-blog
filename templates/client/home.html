@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'client/base.html' %}
 {% load static %}
 {% block content %}
 <section id="hero">
@@ -32,18 +32,18 @@
             </h2>
         </div>
         <ul class="news-portal">
-            {% include 'blog/partials/_posts_loop.html' %}
+            {% include 'client/partials/_posts_loop.html' %}
         </ul>
     </div>
     
     <div id="secondary_column">
-        {% include 'blog/partials/_sidebar.html' %}
+        {% include 'client/partials/_sidebar.html' %}
     </div>
 
 </section>
 <style>
     .hero__image{
-        background-image: url("{% static '/assets/imagens/blog/hero.jpg' %}");
+        background-image: url("{% static '/assets/imagens/client/hero.jpg' %}");
     }
 </style>
 

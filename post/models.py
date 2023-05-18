@@ -1,4 +1,5 @@
 from django.db import models
+
 from datetime import datetime
 class Post(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -13,3 +14,4 @@ class Post(models.Model):
         return f'Post [title={self.title}]'
     # thumb = 
     # author = 
+
