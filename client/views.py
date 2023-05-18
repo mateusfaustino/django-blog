@@ -2,6 +2,15 @@ from django.shortcuts import render
 
 from post.models import Post
 
+def post(request, post_slug):
+
+    post = Post.objects.get(slug=post_slug)
+
+    context= {
+        "post":post
+    }
+    return render(request,'client/post.html',context)
+
 def home(request):
 
     author = {

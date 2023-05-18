@@ -19,7 +19,7 @@
                     {{post.excerpt}}
                 </div>
                 <div class="news-portal-item__action-area">
-                    <a href="{{post.link}}" class="news-portal-item__action">
+                    <a href="{% url 'post' post.slug %}" class="news-portal-item__action">
                         Continue lendo...
                     </a>
                 </div>
