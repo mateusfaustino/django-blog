@@ -1,6 +1,129 @@
-<h1>
- {{post.title}}
-</h1>
-{% autoescape off %}
-{{post.body}}
-{% endautoescape %}
+{% extends 'client/base.html' %}
+{% load static %}
+{% block content %}
+<div id="site-content">
+    <section id="hello" class="post-page">
+        <div id="primary_column">
+            <main id="main" class="site-main post__wrap" role="main">
+                <div class="post__header">
+                    <div class="post__date">
+                       {{post.post_date}}
+                    </div>
+                    <h1 class="post__title">
+                        {{post.title}}
+                    </h1>
+                </div>
+                {% if post.thumb != "" or post.thumb != null %}
+                    <div class="post__thumbnail">
+                        <img width="900" height="900" src="{{post.thumb.url}}">
+                    </div>                
+                {% endif %}
+                <div class="post__content">
+                    {% autoescape off %}
+                    {{post.body}}
+                    {% endautoescape %}
+    
+                </div>
+                
+            </div>
+        </main>
+        
+        <div id="secondary_column">
+            {% include 'client/partials/_sidebar.html' %}
+        </div>
+    
+    </section>
+</div>
+<style>
+    .post__content img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: bottom;
+    }
+    body{
+        background-color: #F7F7F7;
+    }
+    .post__wrap{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 48rem;
+        margin: auto;
+        margin-bottom: 32px;
+    }
+    .post__header{
+        margin-bottom: 32px;
+        width: 100%;
+    }
+    .post__date{
+
+    }
+    .post__title{
+        font-weight: 700;
+        font-size: 2.25rem;
+        letter-spacing: 0;
+        font-family: outfit,Tahoma,Geneva,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+        color: rgb(10 24 41);
+        margin-bottom: 16px;
+    }
+    .post__content *{
+        font-family: Helvetica, sans-serif;
+        /* font-size: 1rem; */
+    }
+    .post__content p{
+        /* font-family: Helvetica, sans-serif; */
+        font-size: 1rem;
+    }
+    .post__content {
+        width: 100%;
+    }
+
+    #hello.post-page{
+        position: relative;
+        max-width: 1170px;
+        margin: auto;
+    }
+    .post__thumbnail img{
+            width: 100% !important;
+            height: auto !important;
+    }
+    p{
+        margin-bottom: 26px;
+        overflow-wrap: break-word;
+        font-size: 19px;
+        line-height: 1.8666;
+        color: #3d3d3d;
+    }
+
+    h1, h2,h3,h4,h5,h6{
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    h2{
+        font-size: 1.6em;
+    }
+
+    .wp-block-image figcaption {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+
+    .wp-block-image {
+        margin-bottom: 16px;
+    }
+    @media screen and (max-width: <?php echo $GLOBALS['site_break_point_1']; ?>) {
+        .post__wrap{
+            
+        }
+        .post__thumbnail img{
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+</style>
+
+{% endblock %}
