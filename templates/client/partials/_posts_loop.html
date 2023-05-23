@@ -3,11 +3,17 @@
 {% for post in posts %}
     <li>
         <div id="news-portal-item">
-            <div class="news-portal-item__thumb"
-                style="background-image: url({{post.thumb}})"
-            >
-            </div>
-
+            {% if post.thumb == "" or post.thumb == null %}
+                <div class="news-portal-item__thumb"
+                    style="background-image: url({% static 'assets/imagens/client/not-found.png' %})"
+                >
+                </div>
+            {% else %}
+                <div class="news-portal-item__thumb"
+                    style="background-image: url({{post.thumb.url}})"
+                >
+                </div>
+            {% endif %}
             <div class="news-portal-item__content">
 
                 <div class="news-portal-item__header">
