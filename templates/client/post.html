@@ -13,7 +13,7 @@
                         {{post.title}}
                     </h1>
                 </div>
-                {% if post.thumb != "" or post.thumb != null %}
+                {% if post.thumb  %}
                     <div class="post__thumbnail">
                         <img width="900" height="900" src="{{post.thumb.url}}">
                     </div>                

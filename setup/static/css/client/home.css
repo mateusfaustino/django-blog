@@ -80,7 +80,6 @@
 #hello{
     padding:calc(88px + 16px) 16px 0;
     top: 100vh;
-    min-width: 100%;
 }
 
 #hello.category,  #hello.post-page{

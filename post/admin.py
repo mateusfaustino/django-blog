@@ -7,6 +7,7 @@ class ListPosts(admin.ModelAdmin):
     list_display_links = ('id','published','title', 'excerpt' )
     search_fields = ('title',)
     form = PostAdminForm
+    prepopulated_fields = {"slug": ("title",)}
 
 
 
