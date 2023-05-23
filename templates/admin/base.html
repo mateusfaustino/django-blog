@@ -1,9 +1,10 @@
-{% extends "admin/base.html" %}
-{% load static %}
+{% extends 'adminlte/base.html' %}
+{% load static i18n %}
 
-{% block footer %}
-    {{ block.super }}
-    <script src="https://cdn.tiny.cloud/1/y1bskghu125pbwg05ysnzts639851y7d9fc0mqqkcf5bharj/tinymce/5/tinymce.min.js"
+{% block extra_head %}
+{{ block.super }}
+
+<script src="https://cdn.tiny.cloud/1/y1bskghu125pbwg05ysnzts639851y7d9fc0mqqkcf5bharj/tinymce/5/tinymce.min.js"
             referrerpolicy="origin"></script>
     <script>
 
@@ -61,4 +62,49 @@
             mentions_item_type: 'profile'
         });
     </script>
+
+
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" type="text/css"
+    href="{% block stylesheet_rtl %}{% static 'admin/css/rtl.css' %}{% endblock %}" />
+{% endif %}
+<link rel="stylesheet" type="text/css"
+    href="{% static 'admin/css/base.css' %}" />
+{% block extrastyle %}{% endblock %}
+{% block extrahead %}{% endblock %}
+{% block blockbots %}
+<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+{% endblock %}
+
+{% block nav_header %}
+{% include 'admin/lib/_main_header.html' %}
+{% endblock %}
+
+{% block nav_sidebar %}
+{% include 'admin/lib/_main_sidebar.html' %}
+{% endblock %}
+
+{% block content_header %}
+<section class="content-header">
+    <div class="container-fluid">
+        {% block breadcrumbs %}
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'admin:index' %}"><i class="fas fa-tachometer-alt"></i> {% trans 'Home' %}</a></li>
+            {% if title %}  {{ title }}{% endif %}
+        </ol>
+        {% endblock %}
+    </div>
+</section>
+
+{% endblock %}
+
+{% block content_block_wrap %}
+
+    {% block content %}
+        {% block object-tools %}{% endblock %}
+        {{ content }}
+        {% block sidebar %}{% endblock %}
+    {% endblock %}
+
+
 {% endblock %}
